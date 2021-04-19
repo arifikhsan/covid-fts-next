@@ -1,20 +1,20 @@
-import updateData  from "../../utils/fetcher";
+import updateData from "../../utils/fetcher";
 
 module.exports = async (req, res) => {
-  let data = await updateData(false);
-  let datamodified = data.harian.map((data) => {
+  let remote = await updateData(false);
+  let response = remote.harian.map((item) => {
     return {
-      positive: data.jumlah_positif.value,
-      active: data.jumlah_dirawat.value,
-      cured: data.jumlah_sembuh.value,
-      death: data.jumlah_meninggal.value,
-      positive_cumulative: data.jumlah_positif_kum.value,
-      active_cumulative: data.jumlah_dirawat_kum.value,
-      cured_cumulative: data.jumlah_sembuh_kum.value,
-      death_cumulative: data.jumlah_meninggal_kum.value,
-      last_update: data.key,
-      datetime: data.key_as_string,
+      positive: item.jumlah_positif.value,
+      active: item.jumlah_dirawat.value,
+      cured: item.jumlah_sembuh.value,
+      death: item.jumlah_meninggal.value,
+      positive_cumulative: item.jumlah_positif_kum.value,
+      active_cumulative: item.jumlah_dirawat_kum.value,
+      cured_cumulative: item.jumlah_sembuh_kum.value,
+      death_cumulative: item.jumlah_meninggal_kum.value,
+      last_update: item.key,
+      datetime: item.key_as_string,
     };
   });
-  res.json(datamodified);
+  res.json(response);
 };
