@@ -1,6 +1,6 @@
 import { get } from "axios";
 
-const updateData = async (rootData) => {
+const dailyCase = async (rootData) => {
   const { data } = await get(
     "https://data.covid19.go.id/public/api/update.json"
   );
@@ -14,4 +14,4 @@ const updateData = async (rootData) => {
   return returnData;
 };
 
-export default updateData
+export default dailyCase

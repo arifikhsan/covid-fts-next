@@ -1,7 +1,7 @@
-import updateData from "../../utils/fetcher";
+import dailyCase from "../../utils/fetcher";
 
 module.exports = async (req, res) => {
-  let remote = await updateData(false);
+  let remote = await dailyCase(false);
   let response = remote.harian.map((item) => {
     return {
       positive: item.jumlah_positif.value,
