@@ -11,7 +11,7 @@ export default function Home() {
       <main>
         <h1 className="title">COVID-19 Fuzzy Time Series Prediction</h1>
         <p className="description">
-          Get started by editing <code>pages/index.js</code>
+          Daily update <a href="/api/daily">/api/daily</a>
         </p>
       </main>
     </div>
