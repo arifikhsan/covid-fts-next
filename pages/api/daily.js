@@ -14,7 +14,7 @@ module.exports = async (req, res) => {
       recover_cumulative: item.jumlah_sembuh_kum.value,
       death_cumulative: item.jumlah_meninggal_kum.value,
       last_update: item.key,
-      datetime: item.key_as_string,
+      date_time: item.key_as_string,
     };
   });
   res.json(response);
