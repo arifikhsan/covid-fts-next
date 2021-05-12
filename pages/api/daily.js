@@ -1,6 +1,6 @@
 import dailyCase from "../../utils/fetcher";
 
-module.exports = async (req, res) => {
+export default async function daily(req, res) {
   let remote = await dailyCase();
   let response = remote.harian.map((item) => {
     return {
@@ -18,4 +18,4 @@ module.exports = async (req, res) => {
     };
   });
   res.json(response);
-};
+}
