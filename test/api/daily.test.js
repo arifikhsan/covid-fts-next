@@ -10,7 +10,9 @@ describe("/api/daily", () => {
 
     await daily(req, res);
 
+    const cases = JSON.parse(res._getData())
     expect(res.statusCode).toBe(200);
-    expect(JSON.parse(res._getData())).toBeTruthy()
+    expect(cases).toBeTruthy()
+    expect(cases.length).toBeGreaterThan(300)
   });
 });
