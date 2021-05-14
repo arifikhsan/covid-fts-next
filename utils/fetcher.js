@@ -1,10 +1,10 @@
-import { get } from "axios";
+import axios from 'axios';
 
 const dailyCase = async (rootData) => {
-  const { data } = await get(
+  const response = await axios.get(
     "https://data.covid19.go.id/public/api/update.json"
   );
-  return data.update;
+  return response;
 };
 
 export default dailyCase

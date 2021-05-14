@@ -2,7 +2,10 @@ import dailyCase from "../../utils/fetcher";
 
 export default async function daily(req, res) {
   let remote = await dailyCase();
-  let response = remote.harian.map((item) => {
+  if (remote.status != 200) {
+    res.json({message: 'Something went wrong'})
+  }
+  let response = remote.data.update.harian.map((item) => {
     return {
       key: item.key,
       positive: item.jumlah_positif.value,
