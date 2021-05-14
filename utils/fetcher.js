@@ -1,10 +1,11 @@
-import axios from 'axios';
+import axios from "axios";
+import validURL from "./validUrl";
 
-const dailyCase = async (rootData) => {
-  const response = await axios.get(
-    "https://data.covid19.go.id/public/api/update.json"
-  );
-  return response;
+const fetcher = async (url) => {
+  if (!validURL(url)) {
+    throw new Error("Something went wrong");
+  }
+  return await axios.get(url);
 };
 
-export default dailyCase
+export default fetcher;
