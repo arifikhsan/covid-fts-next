@@ -18,7 +18,6 @@ describe("Home", () => {
   it("renders a correct link", async () => {
     render(<Home />);
     let link = document.getElementById("api");
-    console.log(link.href)
     expect(link.href).toContain('/api/daily')
   });
 });
