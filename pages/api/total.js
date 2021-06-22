@@ -6,8 +6,8 @@ export default async function daily(_, res) {
   if (remote.status != 200) {
     res.json({ message: "Something went wrong" });
   }
-  let date_time = new Date(remote.data.penambahan.created);
-  let total = remote.data.total;
+  let date_time = new Date(remote.data.update.penambahan.created);
+  let total = remote.data.update.total;
   let response = {
     positive: total.jumlah_positif,
     active: total.jumlah_dirawat,
