@@ -1,10 +1,10 @@
 import fetcher from "../../utils/fetcher";
 
-export default async function daily(req, res) {
-  const url = "https://data.covid19.go.id/public/api/update.json"
-  let remote = await fetcher(url)
+export default async function daily(_, res) {
+  const url = "https://data.covid19.go.id/public/api/update.json";
+  let remote = await fetcher(url);
   if (remote.status != 200) {
-    res.json({message: 'Something went wrong'})
+    res.json({ message: "Something went wrong" });
   }
   let response = remote.data.update.harian.map((item) => {
     return {
