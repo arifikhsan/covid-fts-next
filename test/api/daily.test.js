@@ -45,7 +45,7 @@ describe("/api/daily", () => {
     expect(randomCase).toHaveProperty("date_time");
   });
 
-  it("should return a list of object with correct property value", () => {
+  it("should return a list of object with correct property type", () => {
     const length = cases.length;
     const randomIndex = Math.floor(Math.random() * (length + 1));
     const randomCase = cases[randomIndex];
