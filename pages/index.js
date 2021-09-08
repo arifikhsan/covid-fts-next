@@ -12,10 +12,10 @@ export default function Home() {
       <main>
         <h1>COVID-19 Fuzzy Time Series Prediction</h1>
         <p>
-          Daily update <a href="/api/daily">/api/daily</a>
+          Daily update <a id="daily" href="/api/daily">/api/daily</a>
         </p>
         <p>
-          Last update <a href="/api/last-update">/api/last-update</a>
+          Last update <a id="last-update" href="/api/last-update">/api/last-update</a>
         </p>
       </main>
     </div>
